@@ -1,0 +1,28 @@
+# Inicialización de la lista para almacenar los números ingresados
+numeros = []
+
+# Variables para contar números pares e impares
+numeros_pares = 0
+numeros_impares = 0
+
+# Bucle while para permitir el ingreso de números hasta que el usuario decida no ingresar más
+while True:
+    respuesta = input("Desea ingresar un número? (SI/NO): ").upper()
+    
+    if respuesta == "SI":
+        numero = int(input("Ingrese el número: "))
+        numeros.append(numero)
+        if numero % 2 == 0:
+            numeros_pares += 1
+        else:
+            numeros_impares += 1
+    elif respuesta == "NO":
+        break
+    else:
+        print("Respuesta no válida. Por favor, ingrese 'SI' o 'NO'.")
+
+# Imprimir los números ingresados
+print("Números ingresados:", numeros)
+# Imprimir la cantidad de números pares e impares
+print("Cantidad de números pares:", numeros_pares)
+print("Cantidad de números impares:", numeros_impares)

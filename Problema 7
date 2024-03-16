@@ -1,0 +1,21 @@
+def es_primo(numero):
+    # Los números menores o iguales a 1 no son primos
+    if numero <= 1:
+        return False
+    # Los números 2 y 3 son primos
+    if numero <= 3:
+        return True
+    # Verificar si el número es divisible por algún número entre 2 y su raíz cuadrada
+    # Si lo es, no es primo
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            return False
+    # Si no es divisible por ningún número entre 2 y su raíz cuadrada, entonces es primo
+    return True
+
+# Ejemplo de uso de la función
+numero = int(input("Ingrese un número para verificar si es primo: "))
+if es_primo(numero):
+    print(f"{numero} es primo.")
+else:
+    print(f"{numero} no es primo.")

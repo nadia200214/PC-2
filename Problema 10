@@ -1,0 +1,28 @@
+def convertir_fecha(fecha):
+    # Diccionario para mapear nombres de meses a números de mes
+    meses = {
+        "Enero": "01", "Febrero": "02", "Marzo": "03", "Abril": "04",
+        "Mayo": "05", "Junio": "06", "Julio": "07", "Agosto": "08",
+        "Septiembre": "09", "Octubre": "10", "Noviembre": "11", "Diciembre": "12"
+    }
+    
+    # Separar la fecha en sus componentes (mes, día, año)
+    if "/" in fecha:
+        # Formato mes-día-año
+        mes, dia, anio = fecha.split("/")
+    else:
+        # Formato "Mes día, año"
+        mes_palabra, dia, anio = fecha.split()
+        mes = meses[mes_palabra]  # Obtener el número del mes a partir de su nombre
+    
+    # Formatear la fecha en el formato AAAA-MM-DD
+    fecha_formateada = f"{anio}-{mes}-{dia}"
+    
+    return fecha_formateada
+
+# Solicitar al usuario que ingrese una fecha
+fecha_input = input("Ingrese la fecha (en formato mes/día/año o Mes día, año): ")
+
+# Llamar a la función para convertir la fecha y mostrar el resultado
+fecha_convertida = convertir_fecha(fecha_input)
+print("Fecha en formato AAAA-MM-DD:", fecha_convertida)

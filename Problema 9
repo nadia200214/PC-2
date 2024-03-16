@@ -1,0 +1,22 @@
+def omitir_vocales(cadena):
+    # Lista de vocales en mayúsculas y minúsculas
+    vocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    
+    # Inicializar una cadena vacía para almacenar el resultado
+    resultado = ""
+    
+    # Iterar sobre cada caracter en la cadena de entrada
+    for caracter in cadena:
+        # Verificar si el caracter no es una vocal
+        if caracter not in vocales:
+            # Si no es una vocal, añadirlo al resultado
+            resultado += caracter
+            
+    return resultado
+
+# Solicitar al usuario que ingrese una cadena de texto
+texto = input("Ingrese una cadena de texto: ")
+
+# Llamar a la función y mostrar el resultado
+resultado = omitir_vocales(texto)
+print("Texto sin vocales:", resultado)

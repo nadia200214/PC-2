@@ -1,0 +1,30 @@
+# Función para ingresar los datos de los alumnos y sus calificaciones
+def ingresar_datos_alumnos():
+    alumnos = []
+    continuar = True
+    while continuar:
+        nombre = input("Ingrese el nombre del alumno: ")
+        nota1 = float(input(f"Ingrese la primera calificación de {nombre}: "))
+        nota2 = float(input(f"Ingrese la segunda calificación de {nombre}: "))
+        nota3 = float(input(f"Ingrese la tercera calificación de {nombre}: "))
+
+        # Crear diccionario para almacenar los datos del alumno
+        alumno = {"Alumno": nombre, "Notas": [nota1, nota2, nota3]}
+        alumnos.append(alumno)
+
+        respuesta = input("¿Desea ingresar otro alumno? (SI/NO): ").upper()
+        if respuesta != "SI":
+            continuar = False
+    return alumnos
+
+# Función para mostrar el listado completo de alumnos con sus calificaciones
+def mostrar_listado(alumnos):
+    print("\nListado de alumnos y sus calificaciones:")
+    for alumno in alumnos:
+        print(f"Alumno: {alumno['Alumno']}, Notas: {alumno['Notas']}")
+
+# Ingreso de datos de los alumnos
+alumnos = ingresar_datos_alumnos()
+
+# Mostrar el listado completo de alumnos con sus calificaciones
+mostrar_listado(alumnos)

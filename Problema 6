@@ -1,0 +1,16 @@
+# Definir la función para generar la serie de Fibonacci hasta un límite dado
+def fibonacci(limite):
+    # Inicializar los primeros dos términos de la serie
+    a, b = 0, 1
+    # Imprimir el primer término de la serie (0)
+    print(a, end=", ")
+    
+    # Iterar hasta que el siguiente término exceda el límite
+    while b <= limite:
+        # Imprimir el siguiente término de la serie
+        print(b, end=", ")
+        # Calcular el siguiente término de la serie
+        a, b = b, a + b
+
+# Llamar a la función para generar la serie de Fibonacci hasta 50
+fibonacci(50)
